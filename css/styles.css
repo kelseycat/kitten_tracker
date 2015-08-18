@@ -1,1 +1,49 @@
-/* Adobe Kuler Color Pallete #4788F5 #DEE9F4 #2B77C1 #3180C5 #4AADD8*/
+/*Kuler Theme ---Phaedra---
+  medium orange : #FF6138;
+  yellow-green  : #FFFF9D;
+  light green   : #BEEB9F; left
+  medium green  : #79BD8F;
+  darker green  : #00A388; right
+
+
+  ---- Google Fonts ------
+
+  Francois One - bold, sans serif
+
+*/
+
+.wrapper{
+  width: 100%;
+}
+
+.title{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div .main-content{
+  width: 1000px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px black solid;
+}
+
+.main-content div{
+  float: left;
+  border: 1px black solid;
+/*  padding: 10px 20px 0 20px;*/
+
+}
+
+.main-content canvas{
+  float: left;
+  border: 1px black solid;
+  width: 33%;
+
+}
+
+img{
+  border-radius: 2%;
+}

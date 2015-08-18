@@ -1,8 +1,8 @@
 'use strict';
 
-var photoArray = [];
-var randInt1;
-var randInt2;
+var photoArray = [ ];
+var randInt1; //left
+var randInt2; //right
 
 var Photo = function(fileLocation, votes){ //constructor
 	this.path = fileLocation;
@@ -44,25 +44,23 @@ console.log(photoArray)
 var Tracker = function(){
 	this.leftPhoto;
 	this.rightPhoto;
-
-}
-
-Tracker.prototype.displayWinnerRight = function(){
-	document.getElementById("rightPhoto").style.cssText = "border: 5px solid #A786CF";
-	document.getElementById("nextButton").style.cssText = "visibility: visible;";
-    photoArray[randInt2].votes = photoArray[randInt2].votes + 1;
-    console.log("This cat has " + photoArray[randInt2].votes + " votes");
-    //updateChart/votes
-}
+};
 
 Tracker.prototype.displayWinnerLeft = function(){
-	document.getElementById("leftPhoto").style.cssText = "border: 5px solid #EF6CCD";
-	document.getElementById("nextButton").style.cssText = "visibility: visible;";
-    photoArray[randInt1].votes = photoArray[randInt1].votes + 1;
+    document.getElementById("leftPhoto").style.cssText = "border: 5px solid #BEEB9F";
+    document.getElementById("nextButton").style.cssText = "visibility: visible;";
+    photoArray[randInt1].votes = photoArray[randInt1].votes++;
     console.log("This cat has " + photoArray[randInt1].votes + " votes");
     //updateChart/votes
-}
+};
 
+Tracker.prototype.displayWinnerRight = function(){
+	document.getElementById("rightPhoto").style.cssText = "border: 5px solid #00A388";
+	document.getElementById("nextButton").style.cssText = "visibility: visible;";
+    photoArray[randInt2].votes = photoArray[randInt2].votes++;
+    console.log("This cat has " + photoArray[randInt2].votes + " votes");
+    //updateChart/votes
+};
 
 Tracker.prototype.displayPhotos = function(){
 	document.getElementById("nextButton").style.cssText = "visibility: hidden;";
@@ -75,8 +73,8 @@ Tracker.prototype.displayPhotos = function(){
 	};
 	var leftPhoto = document.getElementById('leftPhoto');
 	var rightPhoto = document.getElementById('rightPhoto');
-	document.getElementById("leftPhoto").src = "img/kittens/" + randInt1 + ".jpg";
-	document.getElementById("rightPhoto").src = "img/kittens/" + randInt2 + ".jpg";
+	document.getElementById("rightPhoto").src = "img/kittens/" + randInt1 + ".jpg";
+	document.getElementById("leftPhoto").src = "img/kittens/" + randInt2 + ".jpg";
 
     this.Pie = function(data,options){
 
@@ -92,29 +90,28 @@ Tracker.prototype.displayPhotos = function(){
                 percentageInnerCutout : 50,
                 onAnimationComplete : null
 
-            };      
+            };
 
             var config = (options)? mergeChartConfig(chart.Pie.defaults,options) : chart.Pie.defaults;
 
-            return new Pie(data,config,context);                
+            return new Pie(data,config,context);
         };
-
     var data = [
+            {
+                value : photoArray[randInt2].votes,
+                color : "#00A388",
+            },
 
             {
                 value: photoArray[randInt1].votes,
-                color:"#EF6CCD"
+                color:"#BEEB9F",
             },
-            {
-                value : photoArray[randInt2].votes,
-                color : "#A786CF"
-            }
 
         ];
         var canvas = document.getElementById("catChart");
         var catChart = canvas.getContext("2d");
         new Chart(catChart).Pie(data);
-	
+
 }
 
 var track1 = new Tracker();

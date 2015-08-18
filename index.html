@@ -1,23 +1,44 @@
 <!DOCTYPE html>
+
 <html>
 <head>
-	<title>Kitten Contest Vote Tracker</title>
-	<link href='css/eric-meyer-reset.css' type='text/css' rel='stylesheet'>
-	<link href='http://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
+	<title>Kitten Vote</title>
+	<link href='css/normalize.css' type='text/css' rel='stylesheet'>
+	<link href='http://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
+
 <body>
-<div id='leftPhotoDiv'>
-	<img id='leftPhoto' src=""/>
-</div>
-<canvas id="catChart" width="250" height="250"></canvas>
-<div id='rightPhotoDiv'>
-	<img id='rightPhoto' src=""/>
-</div>
-<div id = 'buttonDiv'>
-<button type="button" id="nextButton">Moar Kittehz Plz</button>
-</div>
+
+  <div class="wrapper">
+
+    <div class="title">
+    <h1>Kitty Brawl</h1>
+    <p> Only the cutest survive.</p>
+    </div><!-- end title-->
+
+  <div class="main-content">
+    <div id="leftPhotoDiv" class="cat-photo">
+    	<img id="leftPhoto" src="" alt="a cute kitten"/>
+    </div><!--end left photo div-->
+
+    <canvas id="catChart" width="300" height="300"> </canvas>
+
+    <div id="rightPhotoDiv" class="cat-photo">
+    	<img id="rightPhoto" src="" alt="another cute kitten"/>
+    </div>
+
+  </div><!--end main-content-->
+
+    <div id = 'buttonDiv'>
+      <button type="button" id="nextButton">Moar Kittehz Plz</button>
+    </div>
+
+  </div><!--end wrapper-->
+
 <script src="js/Chart.js"></script>
 <script src="js/app.js"></script>
+
 </body>
+
 </html>
