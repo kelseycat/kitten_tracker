@@ -10,40 +10,74 @@
 
   Francois One - bold, sans serif
 
+  Source Sans Pro, sans-serif;
 */
 
+/*global styles*/
+body{
+  height: 100%;
+}
+
+h1{
+  font-family: 'Francois One', serif;
+  font-size: 3em;
+  color: #FF6138;
+}
+
+p{
+  font-family: 'Source Sans Pro' sans-serif;
+  font-style: lighter: ;
+  font-size: 1.2em;
+}
+
+img{
+  margin-top: 30px;
+  border-radius: 2%;
+}
+
+img:hover{
+  cursor: pointer;
+}
+
+/*specific styles*/
 .wrapper{
-  width: 100%;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
 }
 
 .title{
   text-align: center;
+  margin: 50px auto 20px auto;
+}
+
+#buttonDiv{
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.column{
+  float: left;
   margin-left: auto;
   margin-right: auto;
+  padding: 30px;
+  max-height: 800px;
 }
 
-div .main-content{
-  width: 1000px;
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-  border: 1px black solid;
+button{
+  width: 12em;
+  text-align: center;
+  font-family: 'Francois One', Tahoma, sans-serif;
+  background-color: #fff;
+  color:  #FF6138;
+/*  border: 2px solid #ff6138;*/
 }
 
-.main-content div{
-  float: left;
-  border: 1px black solid;
-/*  padding: 10px 20px 0 20px;*/
-
+button:hover{
+  background-color: #ffded5;
 }
 
-.main-content canvas{
-  float: left;
-  border: 1px black solid;
-  width: 33%;
 
-}
 
-img{
-  border-radius: 2%;
-}
+
