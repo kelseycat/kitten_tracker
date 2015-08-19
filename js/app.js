@@ -64,8 +64,8 @@ Tracker.prototype.displayPhotos = function(){
 
 	var leftPhoto = document.getElementById("leftPhoto"); //add jquery
 	var rightPhoto = document.getElementById("rightPhoto"); //add jquery
-	document.getElementById("rightPhoto").src = "img/kittens/" + randInt1 + ".jpg"; //add jquery
-	document.getElementById("leftPhoto").src = "img/kittens/" + randInt2 + ".jpg"; // add jquery
+	document.getElementById("rightPhoto").src = photoArray[randInt1].path; //add jquery
+	document.getElementById("leftPhoto").src = photoArray[randInt2].path; // add jquery
 
     //using chart.js
     this.Pie = function(data, options){
@@ -105,6 +105,7 @@ Tracker.prototype.displayPhotos = function(){
 //new instance of project
 var track1 = new Tracker();
 track1.displayPhotos();
+
 var chooseLeft = document.getElementById('leftPhotoDiv'); //jquery
 chooseLeft.addEventListener('click', track1.displayWinnerLeft);
 
